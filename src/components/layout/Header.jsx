@@ -161,6 +161,9 @@ export default function Header() {
               </svg>
             </button>
 
+              
+
+            {/*Logo desktop  */}
             <NavLink className="group hidden shrink-0 items-center gap-3 lg:inline-flex" to="/">
               <img alt="Velora Casino" className="h-8 w-auto sm:h-9 lg:h-12" src={logo} />
             </NavLink>
@@ -192,6 +195,7 @@ export default function Header() {
                 </NavLink>
               ))}
             </nav>
+            
           </div>
 
           {/* Área de usuario */}
@@ -226,6 +230,10 @@ export default function Header() {
                 Register
               </NavLink>
             </div>
+            {/*Logo mobile  */}
+            <NavLink className="group inline-flex shrink-0 items-center gap-3 lg:hidden" to="/">
+              <img alt="Velora Casino" className="h-8 w-auto sm:h-9" src={logo} />
+            </NavLink>
 
             {/* Balance + Add (solo escritorio) */}
             <div className="hidden items-center rounded-xl border border-velora-borderSubtle bg-velora-surface/90 p-1 pl-3.5 shadow-inner-glow transition-all hover:border-velora-gold/30 lg:flex">
