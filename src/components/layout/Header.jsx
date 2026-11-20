@@ -148,8 +148,20 @@ export default function Header() {
         <div className="mx-auto flex h-16 max-w-[1920px] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-4 lg:h-20 lg:px-8">
           {/* Marca + navegación */}
           <div className="flex min-w-0 flex-1 items-center gap-8 xl:gap-12">
-            {/* Logo (visible también en móvil y tablet) */}
-            <NavLink className="group inline-flex shrink-0 items-center gap-3" to="/">
+            {/* Menú móvil/tablet, a la izquierda; la marca queda para escritorio */}
+            <button
+              type="button"
+              aria-label="Toggle Mobile Menu"
+              aria-expanded={isMenuOpen}
+              onClick={() => setIsMenuOpen(true)}
+              className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-velora-borderSubtle bg-velora-surface text-slate-300 transition-colors hover:border-velora-gold/40 hover:text-white sm:h-9 sm:w-9 lg:hidden"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+              </svg>
+            </button>
+
+            <NavLink className="group hidden shrink-0 items-center gap-3 lg:inline-flex" to="/">
               <img alt="Velora Casino" className="h-8 w-auto sm:h-9 lg:h-12" src={logo} />
             </NavLink>
 
@@ -199,7 +211,7 @@ export default function Header() {
               <LanguageSwitcher />
             </div>
 
-            {/* Acceso + menú: solo móvil y tablet */}
+            {/* Acceso: solo móvil y tablet */}
             <div className="flex shrink-0 items-center gap-1.5 lg:hidden">
               <NavLink
                 to="/auth/login"
@@ -213,17 +225,6 @@ export default function Header() {
               >
                 Register
               </NavLink>
-              <button
-                type="button"
-                aria-label="Toggle Mobile Menu"
-                aria-expanded={isMenuOpen}
-                onClick={() => setIsMenuOpen(true)}
-                className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-velora-borderSubtle bg-velora-surface text-slate-300 transition-colors hover:border-velora-gold/40 hover:text-white sm:h-9 sm:w-9"
-              >
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                </svg>
-              </button>
             </div>
 
             {/* Balance + Add (solo escritorio) */}
@@ -291,7 +292,7 @@ export default function Header() {
             className="velora-drawer-backdrop absolute inset-0 h-full w-full cursor-default bg-black/70 backdrop-blur-sm"
           />
 
-          <aside className="velora-drawer absolute inset-y-0 right-0 flex w-[85%] max-w-[340px] flex-col border-l border-velora-borderSubtle bg-[#0A0C13] shadow-2xl">
+          <aside className="velora-drawer absolute inset-y-0 left-0 flex w-[85%] max-w-[340px] flex-col border-r border-velora-borderSubtle bg-[#0A0C13] shadow-2xl">
             <div className="flex items-center justify-between border-b border-velora-borderSubtle p-5">
               <NavLink to="/" onClick={() => setIsMenuOpen(false)} className="inline-flex">
                 <img alt="Velora Casino" className="h-9 w-auto" src={logo} />
