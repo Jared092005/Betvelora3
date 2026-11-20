@@ -1,0 +1,59 @@
+# Dependencias
+node_modules
+
+# Build
+dist
+dist-ssr
+
+# Entorno
+.env
+.env.*
+.env.example
+
+# Vercel (ids de proyecto/org que crea el CLI al hacer `vercel link`)
+.vercel
+
+# Cachés de herramientas
+.eslintcache
+.cache
+.turbo
+
+# Tests y cobertura (por si se añaden más adelante)
+coverage
+test-results
+playwright-report
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos locales y de sistema
+*.local
+*.bak
+*.orig
+*.rej
+
+# Documentación
+openapi.yaml
+API.md
